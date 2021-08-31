@@ -1,0 +1,128 @@
+body {
+  margin: 50px;
+  background: #ededed;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+.clear-fix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.re_cast {
+  position: relative;
+  width: 753px;
+  padding: 10px 11px;
+  background: #fff;
+}
+/* Title */
+.re_cast h3 {
+  margin-bottom: 20px;
+  border-bottom: 2px solid #454545;
+}
+.re_cast h3 img {
+  padding: 0px 0 10px 12px;
+}
+/* Middle line */
+.re_cast .line {
+  float: left;
+  display: block;
+  width: 1px;
+  height: 197px;
+  background: #ededed;
+}
+/* Left post */
+.re_cast ul.left {
+  float: left;
+  width: 394px;
+  margin: 0 22px;
+}
+/* li를 BFC로 만들어 주는 부분 */
+.re_cast ul.left li {
+  float: left;
+}
+
+.re_cast ul li:not(:last-child) {
+  margin-bottom: 23px;
+}
+/* Right post */
+.re_cast ul.right {
+  float: right;
+  width: 278px;
+  margin: 0 18px;
+}
+
+.re_cast ul.right li:not(:last-child) {
+  margin-bottom: 18px;
+}
+/* Post contents */
+.re_cast ul li {
+  letter-spacing: 1px;
+}
+.re_cast ul li::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+.re_cast ul li img {
+  float: left;
+  padding: 3px;
+  background: #fff;
+  border: 1px solid #ededed;
+}
+.re_cast ul.left li img {
+  width: 77px;
+  margin-right: 14px;
+}
+.re_cast ul.right li img {
+  width: 42px;
+  margin-right: 10px;
+}
+
+.re_cast ul.left li strong {
+  margin-top: 6px;
+}
+.re_cast ul.right li strong {
+  padding-top: 0;
+}
+.re_cast ul li em {
+  font-size: 11px;
+  color: #999;
+}
+.re_cast ul.left li em {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+.re_cast ul.right li em {
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+.re_cast ul li span {
+  line-height: 1.7;
+  font-size: 11px;
+}
+
+/* page nav */
+.page {
+  position: absolute;
+  top: 13px;
+  right: 28px;
+}
+.page > * {
+  float: left;
+}
+.page span {
+  margin-right: 6px;
+  line-height: 16px;
+  font-weight: 700;
+}
+.page .next {
+  margin-left: -1px;
+}
+/* image */
+.recast_img {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  opacity: 0.3;
+}
