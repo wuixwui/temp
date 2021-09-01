@@ -4,11 +4,12 @@ html {
   font-size: 100%;
 }
 body {
-  line-height: 1.3;
-  color: #666666;
-  background-color: #fff;
-  margin: 0;
+  margin: 50px;
   padding: 0;
+  background: #ddd;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 12px;
+  line-height: 1.3;
 }
 h1,
 h2,
