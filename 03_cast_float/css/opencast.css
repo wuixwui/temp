@@ -149,28 +149,28 @@ body {
   margin-bottom: 9px;
 }
 /* Page */
-.opencast .opencast__page {
+.opencast .page {
   position: absolute;
+  top: auto;
   bottom: 11px;
   right: 16px;
 }
-.opencast .opencast__page span {
+.opencast .page span {
   float: left;
   margin-right: 7px;
   line-height: 19px;
   font-size: 10px;
 }
-.opencast .opencast__page-arrow {
-  float: left;
-  width: 41px;
-  height: 19px;
-  background: center no-repeat url('../images/btn_pagearrow.gif');
-}
-.opencast .opencast__page-arrow a {
+
+.opencast .page a {
   float: left;
   display: inline-block;
-  width: 20px;
+  background: no-repeat url('../images/btn_pagearrow.gif');
+  background-position: 0 0;
+  width: 21px;
   height: 19px;
-  font-size: 10px;
-  color: transparent;
+  text-indent: -9999px;
+}
+.opencast .page a:last-child {
+  background-position: 100% 0;
 }
