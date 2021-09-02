@@ -9,13 +9,12 @@
 .opencast {
   position: relative;
   width: 593px;
-  padding: 20px 0 33px;
   border: 1px solid #000;
   background: #fff;
 }
 /* Opencast_top */
 .opencast .opcast_top {
-  padding: 0 15px 11px;
+  padding: 20px 15px 11px;
   border-bottom: 1px solid #ddd;
   margin-bottom: 12px;
 }
@@ -29,20 +28,19 @@
 }
 .opencast .opcast_top ul.category li {
   float: left;
-  line-height: 12px;
+  font-size: 10px;
+  /* border: 1px solid #000; */
 }
 .opencast .opcast_top ul.category li:not(:last-child)::after {
   content: '';
-  float: left;
-  display: inline-block;
+  position: absolute;
   width: 1px;
   height: 10px;
-  margin: 1px 3px 1px 3px;
+  margin: 1px 0;
   background: #ddd;
 }
 .opencast .opcast_top ul.category li a {
-  float: left;
-  font-size: 10px;
+  margin: 0 5px;
 }
 .opencast .opcast_top ul.category li a:hover {
   text-decoration: underline;
@@ -82,6 +80,11 @@
   background: #ddd;
 }
 /* Opencast */
+/* Opencast body */
+.opencast .opcast_body {
+  display: flow-root;
+  padding: 0 15px 33px 16px;
+}
 /* Opencast title */
 .opencast .opcast_body h4 {
   display: inline-block;
@@ -95,14 +98,10 @@
   font-size: 10px;
   color: #999;
 }
-/* Opencast body */
-.opencast .opcast_body {
-  display: flow-root;
-  padding: 0 15px 0 16px;
-}
 /* Opencast contents */
 .opencast .contlist {
   float: left;
+  margin-right: 22px;
 }
 .opencast .contlist li {
   float: left;
@@ -120,17 +119,9 @@
 .opencast .contlist li a span {
   font-size: 10px;
 }
-/* line */
-.opencast .line {
-  float: left;
-  display: block;
-  width: 1px;
-  height: 77px;
-  margin: 0 10px 0 11px;
-  background: #ddd;
-}
 /* Infoplus */
 .opencast .infoplus {
+  position: relative;
   float: left;
 }
 .opencast .infoplus strong {
@@ -140,6 +131,15 @@
 }
 .opencast .infoplus span {
   margin-bottom: 9px;
+}
+.opencast .infoplus::before {
+  content: '';
+  position: absolute;
+  left: -11px;
+  top: -1px;
+  width: 1px;
+  height: 77px;
+  background: #ddd;
 }
 /* Page */
 .opencast .page {
