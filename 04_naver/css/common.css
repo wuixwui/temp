@@ -1,37 +1,45 @@
 @charset "utf-8";
 /* reset */
-/* global setting */
+/* 기본적인 타이포 베이스는 reset에 넣어주는 경우가 많다. */
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #333;
+}
+/* typogrphy */
+a {
+  text-decoration: none;
+  color: inherit;
+}
 /* common property */
 .content-default {
-  max-width: 940px;
+  width: 940px;
   margin: 0 auto;
-  border: 0.5px solid #000;
+}
+.sub {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #e1e1e1;
+  border-radius: 0 0 5px 5px;
+  border-top: 2px solid #2db400;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.closed {
+  height: 10px !important;
 }
 
 /* layout */
-body {
-  font-family: 'Nanum Gothic', sans-serif;
-  color: #333;
-}
 .container {
   position: relative;
   width: 100%;
   height: 100%;
 }
-/* header */
-header {
-  background: #1ec800;
-}
-header .content-default {
-  height: 119px;
-}
-/* aside */
-aside {
-  background: #f1f2f3;
-}
-aside .content-default {
-  height: 135px;
-}
+
 /* main */
 main {
   position: relative;
@@ -42,19 +50,18 @@ main .breadcrumbs {
   right: 0;
   width: 200px;
   height: 30px;
-  background: #1ec800;
+  background: #2db400;
 }
 main .sub-menu {
   float: left;
   width: 120px;
   height: 500px;
-  background: #1ec800;
+  background: #2db400;
 }
 main .contents {
   float: right;
   width: 760px;
   margin-left: 60px;
-  background: #fff;
 }
 /* footer */
 footer {
@@ -66,76 +73,327 @@ footer .content-default {
 }
 
 /* header */
+header .content-default {
+  position: relative;
+  z-index: 3;
+  display: flow-root;
+  height: 120px;
+}
+header h1 {
+  float: left;
+  margin-top: 38px;
+}
+header nav > ul {
+  float: left;
+  position: relative;
+  padding: 0 10px;
+  margin-top: 38px;
+  margin-left: 70px;
+}
+header nav > ul li {
+  float: left;
+  padding-bottom: 10px;
+}
+header nav > ul > li + li {
+  margin-left: 36px;
+}
+header nav > ul li:hover .sub {
+  display: block;
+}
+header nav > ul li .sub {
+  padding: 18px 13px 16px 18px;
+}
+header nav > ul li .sub a {
+  width: 100px;
+  float: left;
+}
+header nav > ul li .sub a:hover {
+  color: #2db400;
+}
+/* util */
+header .util {
+  float: right;
+  margin-top: 43px;
+}
+header .util > li {
+  position: relative;
+  float: left;
+  width: 66px;
+}
+header .util > li:not(.global, .lang):after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  right: 0;
+  width: 1px;
+  height: 10px;
+  background: #ddd;
+}
+header .util > li img {
+  margin: 0 auto;
+}
+header .util > li.global {
+  width: 116px;
+  padding-bottom: 10px;
+  margin-top: -3px;
+}
+header .util > li.lang {
+  width: 122px;
+  margin-top: -8px;
+  border: 1px solid transparent;
+}
+header .util > li.lang:hover {
+  border: 1px solid #ededed;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+}
+header .util > li.global:hover .sub,
+header .util > li.lang:hover .sub {
+  display: block;
+}
+header .util .sub {
+  padding: 12px 10px;
+}
+header .util .sub li:not(:last-child) {
+  margin-bottom: 3px;
+}
 
 /* aside */
+aside {
+  z-index: 2;
+  background: #f1f2f3;
+}
+aside .content-default {
+  position: relative;
+  height: 135px;
+  transition: height 0.2s ease;
+}
+aside .side {
+  overflow: hidden;
+  float: left;
+  height: 135px;
+  transition: height 0.2s ease, opacity 0.2s ease;
+}
+aside .side:first-child::after,
+aside .side:nth-child(2)::after {
+  content: '';
+  display: inline-block;
+  float: left;
+  width: 1px;
+  height: 135px;
+  background: #fff;
+}
+aside .side_col1 .title {
+  position: absolute;
+  top: -17px;
+  left: 0;
+}
+aside .side_col1 .more {
+  position: absolute;
+  top: -11px;
+  right: 398px;
+}
+aside .side_col1 ul {
+  float: left;
+  padding: 15px 20px;
+  width: 526px;
+}
+aside .side_col1 ul li {
+  display: flow-root;
+}
+aside .side_col1 ul li a {
+  float: left;
+}
+aside .side_col1 ul li span {
+  float: right;
+}
+aside .side_col1 ul li a:hover {
+  text-decoration: underline;
+}
+aside .side_col2 {
+  background: url('../images/aside/extra_bg_recruit1.gif');
+}
+aside .side_col3 {
+  background: url('../images/aside/extra_bg_recruit2.gif');
+}
+aside .side_col2 a {
+  float: left;
+  display: block;
+  width: 165px;
+  padding: 10px;
+}
+aside .side_col3 a {
+  float: left;
+  display: block;
+  width: 167px;
+  padding: 10px;
+}
+aside .open {
+  position: absolute;
+  z-index: 2;
+  top: 100%;
+  left: 180px;
+  border: none;
+  border-radius: 0 0 5px 5px;
+  cursor: pointer;
+}
 
 /* breadcrumbs */
 
 /* footer */
 
 /* contents */
-.contents {
-  padding: 74px 0 104px;
-  font-size: 13px;
-}
-/* content */
-
+/* content common */
 .slogan {
   margin-top: 20px;
 }
-/* first content */
-.content:nth-child(2) {
-  padding-top: 35px;
-  border-top: 1px solid #999;
+.content:first-child {
+  border-bottom: 1px solid #e1e1e1;
 }
 .col-container::after {
   content: '';
   display: block;
   clear: both;
 }
-.content:first-child > .col-container {
-  padding: 37px 0 92px;
-}
-.content:nth-child(2) > .col-container {
-  padding: 39px 0 32px;
-}
-.link_banner li:first-child {
-  border-top: 2px solid #1ec800;
-}
-/* col */
 .col {
   float: left;
-  width: 235px;
-  line-height: 1.7;
   /* border: 0.1px solid #000; */
 }
-.col:last-child {
+
+/* naver about */
+.contents.naver11 {
+  padding: 74px 0 104px;
+}
+/* content */
+.content:first-child {
+  margin-bottom: 35px;
+}
+.naver11 .content:first-child > .col-container {
+  padding: 37px 0 92px;
+}
+.naver11 .content:nth-child(2) > .col-container {
+  padding: 39px 0 32px;
+}
+.naver11 .link_banner li:first-child {
+  border-top: 2px solid #2db400;
+}
+/* col */
+.naver11 .col {
+  width: 235px;
+}
+.naver11 .col:last-child {
   position: relative;
   width: 215px;
 }
 
-.col:not(:last-child) {
+.naver11 .col:not(:last-child) {
   margin-right: 37px;
 }
-.col p:not(:last-child) {
+.naver11 .col p:not(:last-child) {
   margin-bottom: 28px;
 }
-.banner {
+.naver11 .banner {
   position: absolute;
   text-align: right;
   top: 21px;
   right: -8px;
 }
-.banner img {
+.naver11 .banner img {
   float: right;
 }
-.banner img:first-child {
+.naver11 .banner img:first-child {
   margin-top: 22px;
 }
 /* visual */
-.visual {
+.naver11 .visual {
   position: relative;
   left: -180px;
+}
+
+/* 네이버 소개 */
+.contents.naver71 {
+  padding: 69px 0 106px;
+}
+/* content */
+.naver71 .content:first-child {
+  margin-bottom: 38px;
+}
+.naver71 .col-container {
+  position: relative;
+  margin-top: 51px;
+}
+/* col */
+.naver71 .col {
+  width: 240px;
+}
+.naver71 .col > ul {
+  padding: 5px;
+}
+.naver71 .col > p {
+  padding: 8px 5px;
+}
+.naver71 .col > ul li {
+  position: relative;
+  padding-left: 8px;
+}
+.naver71 .col ul > li::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 0;
+  border: 1px solid #000;
+}
+.naver71 .col .pro_btn {
+  position: absolute;
+  bottom: 10px;
+  left: auto;
+}
+.naver71 .col:not(:last-child) {
+  margin-right: 20px;
+}
+/* pocess */
+.naver71 .process h4 + img {
+  margin-top: 21px;
+}
+.naver71 ol {
+  position: relative;
+  height: 330px;
+  margin-top: 31px;
+}
+.naver71 ol > li {
+  position: absolute;
+  width: 380px;
+}
+.naver71 ol > li.num1 {
+  top: 0;
+  left: 0;
+}
+.naver71 ol > li.num2 {
+  top: 150px;
+  left: 0;
+}
+.naver71 ol > li.num3 {
+  top: 0;
+  right: 0;
+}
+.naver71 ol > li.num4 {
+  bottom: 0;
+  right: 0;
+}
+
+.naver71 ol > li > ul {
+  padding-left: 45px;
+}
+.naver71 ol > li > ul li {
+  position: relative;
+  padding-left: 8px;
+}
+.naver71 ol > li > ul li::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 0;
+  border: 1px solid #000;
 }
 /* board */
 
