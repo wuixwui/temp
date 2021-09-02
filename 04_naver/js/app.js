@@ -7,10 +7,12 @@ function noticeToggleHandler() {
   if (!noticeContents.classList.contains('closed')) {
     noticeContents.classList.add('closed');
     noticeContent[0].style.opacity = '0';
+    noticeContent[0].style.pointerEvents = 'none';
     noticeContent.forEach((side) => side.classList.add('closed'));
   } else {
     noticeContents.classList.remove('closed');
     noticeContent[0].style.opacity = '1';
+    noticeContent[0].style.pointerEvents = 'auto';
     noticeContent.forEach((side) => side.classList.remove('closed'));
   }
 }
