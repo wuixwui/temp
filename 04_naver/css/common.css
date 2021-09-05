@@ -179,7 +179,6 @@ aside .side:first-child::after,
 aside .side:nth-child(2)::after {
   content: '';
   display: inline-block;
-  float: left;
   width: 1px;
   height: 135px;
   background: #fff;
